@@ -1,10 +1,6 @@
 #ifndef SLLIST_H
 #define SLLIST_H
 
-#define NOME 1
-#define NUM_CAMISA 2
-#define ALTURA 3
-
 #define TRUE 1
 #define FALSE 0
 
