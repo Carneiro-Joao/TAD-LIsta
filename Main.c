@@ -112,8 +112,16 @@ int main()
                 {
                     printf("\nDigite o nome do jogador: ");
                     scanf("%s", novoJogador->nome);
-                    printf("Digite o numero da camisa: ");
-                    scanf("%d", &novoJogador->numCamisa);
+                    int numCamisa;
+                    do {
+                        printf("Digite o numero da camisa: ");
+                        scanf("%d", &numCamisa);
+                        if (buscarJogador(time, &numCamisa, cmpJogadorNumCamisa) != NULL) {
+                            printf("\nNumero da camisa ja esta sendo usado. Por favor, escolha outro numero.\n");
+                        }
+                    } while (buscarJogador(time, &numCamisa, cmpJogadorNumCamisa) != NULL);
+                    
+                    novoJogador->numCamisa = numCamisa;
                     printf("Digite a altura do jogador: ");
                     scanf("%f", &novoJogador->altura);
 
